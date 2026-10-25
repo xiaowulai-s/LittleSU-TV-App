@@ -35,8 +35,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os_desc: macos-intel
-            platform: macos-13 # Intel-based macOS runner (Monterey)
           - os_desc: macos-arm
             platform: macos-14 # ARM-based macOS runner (Sonoma) - Apple Silicon
           - os_desc: ubuntu-latest
