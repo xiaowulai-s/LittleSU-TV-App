@@ -67,7 +67,7 @@ input:focus, select:focus, textarea:focus {
 /* ---------- 粉色点缀 → 品牌靛紫（JS 动态渲染元素） ---------- */
 [class*="text-pink-2"], [class*="text-pink-3"], [class*="text-pink-4"] { color: #a5b4fc !important; }
 [class*="hover:text-pink-3"]:hover, [class*="hover:text-pink-4"]:hover { color: #c4b5fd !important; }
-[class*="bg-pink-8"], [class*="bg-pink-9"] { background-color: rgba(99, 102, 241, .22) !important; }
+[class*="bg-pink-"], [class*="bg-rose-"] { background-color: rgba(99, 102, 241, .25) !important; }
 [class*="border-pink"] { border-color: rgba(129, 140, 248, .45) !important; }
 #mobileBottomNav button.active svg { stroke: #a5b4fc !important; }
 #mobileBottomNav button.active span { color: #a5b4fc !important; }
@@ -83,3 +83,6 @@ body.page-bg, .page-bg {
 /* ---------- 文字对比度提升（避免灰字发糊观感） ---------- */
 [class*="text-gray-400"] { color: #b6c2d4 !important; }
 [class*="text-gray-500"] { color: #98a6ba !important; }
+
+/* ---------- 玫红激活态兜底（bg-pink-600 等任意深浅） ---------- */
+[class*="text-rose-"], [class*="bg-rose-"] { color: #a5b4fc !important; }
