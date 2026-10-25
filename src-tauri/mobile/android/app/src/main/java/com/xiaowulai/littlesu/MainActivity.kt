@@ -5,7 +5,6 @@ import android.view.View
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import app.tauri.TauriActivity
 
 class MainActivity : TauriActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
