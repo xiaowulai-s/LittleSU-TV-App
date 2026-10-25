@@ -80,7 +80,7 @@ function initializePageContent() {
         currentEpisodes = []; currentEpisodeIndex = 0; episodesReversed = false;
     }
 
-    document.title = currentVideoTitle + ' - LibreTV播放器';
+    document.title = currentVideoTitle + ' - LittleSU TV播放器';
     const videoTitleElement = document.getElementById('videoTitle');
     if (videoTitleElement) videoTitleElement.textContent = currentVideoTitle;
 

@@ -41,8 +41,8 @@ function initPlayer(videoUrl, sourceCode) {
         hotkey: true, mutex: true, volume: 0.7, screenshot: true, 
         preventClickToggle: false, airplay: true, chromecast: true,
         contextmenu: [
-            { text: '关于 LibreTV', link: 'https://github.com/LibreSpark/LibreTV' },
-            { text: '问题反馈', click: () => window.open('https://github.com/LibreSpark/LibreTV/issues', '_blank') }
+            { text: '关于 LittleSU TV', link: 'https://github.com/LibreSpark/LittleSU TV' },
+            { text: '问题反馈', click: () => window.open('https://github.com/LibreSpark/LittleSU TV/issues', '_blank') }
         ],
         video: {
             url: videoUrl,

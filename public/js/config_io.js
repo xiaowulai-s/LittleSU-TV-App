@@ -18,7 +18,7 @@ async function importConfig() {
                 reader.readAsText(file);
             });
             const config = JSON.parse(content);
-            if (config.name !== 'LibreTV-Settings') throw '配置文件格式不正确'; // Corrected error throwing
+            if (config.name !== 'LittleSU TV-Settings') throw '配置文件格式不正确'; // Corrected error throwing
             
             // sha256 is assumed to be global or in a utility file (e.g., sha256.js)
             if (typeof sha256 !== 'function') {
@@ -72,7 +72,7 @@ async function exportConfig() {
         items[SEARCH_HISTORY_KEY] = searchHistory;
     }
     const times = Date.now().toString();
-    config['name'] = 'LibreTV-Settings';
+    config['name'] = 'LittleSU TV-Settings';
     config['time'] = times;
     config['cfgVer'] = '1.0.0';
     config['data'] = items;
@@ -84,7 +84,7 @@ async function exportConfig() {
         return;
     }
     config['hash'] = await sha256(JSON.stringify(config['data']));
-    saveStringAsFile(JSON.stringify(config), 'LibreTV-Settings_' + times + '.json');
+    saveStringAsFile(JSON.stringify(config), 'LittleSU TV-Settings_' + times + '.json');
 }
 
 // 将字符串保存为文件

@@ -1,0 +1,87 @@
+/* ============================================================
+   LittleSU TV 主题覆盖层 —— 在 styles.css 之后加载
+   品牌色：靛蓝→紫（与应用图标一致的渐变语言）
+   ============================================================ */
+
+:root { --lsu1: #818cf8; --lsu2: #c084fc; }
+
+/* ---------- 全局背景：深蓝 + 顶部品牌辉光 ---------- */
+html, body { background: #0b101a !important; }
+body.page-bg, .page-bg {
+  background:
+    radial-gradient(900px 420px at 50% -8%, rgba(129, 140, 248, .20), transparent 65%),
+    radial-gradient(700px 380px at 110% 110%, rgba(192, 132, 252, .10), transparent 60%),
+    #0b101a !important;
+}
+
+/* ---------- 品牌渐变文字（logo / 区块标题） ---------- */
+.gradient-text {
+  background: linear-gradient(120deg, #a5b4fc 0%, #c084fc 52%, #f0abfc 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+/* ---------- 旧硬编码底色 → 现代深蓝玻璃 ---------- */
+[class*="bg-[#111]"], [class*="bg-[#151515]"], [class*="bg-[#222]"] {
+  background-color: rgba(255, 255, 255, .04) !important;
+}
+[class*="bg-[#333]"] { background-color: rgba(255, 255, 255, .08) !important; }
+[class*="border-[#333]"], [class*="border-[#444]"] { border-color: rgba(255, 255, 255, .10) !important; }
+[class*="hover:bg-[#333]"]:hover { background-color: rgba(129, 140, 248, .12) !important; }
+[class*="hover:bg-[#444]"]:hover { background-color: rgba(129, 140, 248, .16) !important; }
+[class*="hover:border-white"]:hover { border-color: rgba(165, 180, 252, .55) !important; }
+
+/* ---------- 底部导航：玻璃拟态 + 品牌激活态 ---------- */
+#bottomNav {
+  background: rgba(11, 16, 26, .78) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.4) !important;
+  backdrop-filter: blur(18px) saturate(1.4) !important;
+  border-top: 1px solid rgba(129, 140, 248, .16) !important;
+}
+#bottomNav .nav-item { transition: color .2s ease, transform .2s ease; }
+#bottomNav .nav-item.active { color: #a5b4fc !important; transform: translateY(-2px); }
+#bottomNav .nav-item.active svg { stroke: #a5b4fc !important; }
+
+/* ---------- 卡片现代化 ---------- */
+.card-hover {
+  border-radius: 1rem !important;
+  border: 1px solid rgba(255, 255, 255, .07) !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02)) !important;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+}
+.card-hover:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(165, 180, 252, .45) !important;
+  box-shadow: 0 12px 32px -12px rgba(99, 102, 241, .45) !important;
+}
+.card-hover img { border-radius: .75rem; }
+
+/* ---------- 输入焦点品牌化 ---------- */
+input:focus, select:focus, textarea:focus {
+  border-color: rgba(165, 180, 252, .55) !important;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, .18) !important;
+  outline: none !important;
+}
+
+/* ---------- 滚动条 ---------- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(129, 140, 248, .35); border-radius: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* ---------- 粉色点缀 → 品牌靛紫（JS 动态渲染元素） ---------- */
+[class*="text-pink-2"], [class*="text-pink-3"], [class*="text-pink-4"] { color: #a5b4fc !important; }
+[class*="hover:text-pink-3"]:hover, [class*="hover:text-pink-4"]:hover { color: #c4b5fd !important; }
+[class*="bg-pink-8"], [class*="bg-pink-9"] { background-color: rgba(99, 102, 241, .22) !important; }
+[class*="border-pink"] { border-color: rgba(129, 140, 248, .45) !important; }
+#mobileBottomNav button.active svg { stroke: #a5b4fc !important; }
+#mobileBottomNav button.active span { color: #a5b4fc !important; }
+
+/* ---------- 背景辉光增强 ---------- */
+body.page-bg, .page-bg {
+  background:
+    radial-gradient(1100px 520px at 50% -10%, rgba(129, 140, 248, .28), transparent 62%),
+    radial-gradient(800px 420px at 108% 108%, rgba(192, 132, 252, .14), transparent 60%),
+    linear-gradient(180deg, #0b101a 0%, #0d1220 100%) !important;
+}
