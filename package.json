@@ -1,6 +1,6 @@
 {
   "name": "littlesu-tv-app",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "LittleSU TV — 免费在线视频搜索与观看平台（独立客户端）",
   "private": true,
   "type": "module",
@@ -19,7 +19,7 @@
   "author": "xiaowulai-s",
   "license": "MIT",
   "devDependencies": {
-    "@tauri-apps/cli": "2.5.0",
+    "@tauri-apps/cli": "^2.12.4",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "serve": "^14.2.4",
