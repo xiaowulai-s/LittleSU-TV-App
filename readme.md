@@ -1,65 +1,66 @@
-# LibreTV-App 📺
+# LittleSU TV App
 
-**一个免费、跨平台的在线视频搜索与观看应用。**
+**免费在线视频搜索与观看平台 —— 独立客户端版**：搜索、播放、豆瓣推荐全部内置，**无需任何服务器、无需电脑、无需域名**，安装即用。
 
-[![GitHub Stars](https://img.shields.io/github/stars/KeyRotate/LibreTV-App?style=social)](https://github.com/KeyRotate/LibreTV-App/stargazers)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/KeyRotate/LibreTV-App)](https://github.com/KeyRotate/LibreTV-App/releases/latest)
-[![GitHub all releases](https://img.shields.io/github/downloads/KeyRotate/LibreTV-App/total)](https://github.com/KeyRotate/LibreTV-App/releases)
-[![GitHub License](https://img.shields.io/github/license/KeyRotate/LibreTV-App)](LICENSE)
+> 本应用基于 [LibreTV-App](https://github.com/KeyRotate/LibreTV-App)（MIT）修改，其上游为 [LibreTV](https://github.com/LibreSpark/LibreTV)（AGPL）。出处声明见 [NOTICE](./NOTICE)。
 
-LibreTV-App 是一个免费的开源在线视频搜索与观看平台，旨在提供简洁、高效、无广告的观影体验。作为经典 [LibreTV](https://github.com/LibreSpark/LibreTV) 项目的现代化重构版本，本项目采用 [Tauri 2.0](https://tauri.app/) 框架开发，实现了对 Windows, macOS, Linux, 以及 Android 的原生支持。无论您在哪个设备上，都可以轻松享受海量影视资源。
+## 特性
 
----
+- **完全独立运行**：聚合搜索与解析内置在应用内，通过 Tauri 原生 HTTP 直连资源站（无 CORS 限制）
+- **内置实测可用源**：量子 / 非凡 / 暴风 / 360（可在设置中增删自定义 API）
+- **跨平台**：Windows / macOS / Linux 桌面端 + Android APK
+- **应用内自动更新**（桌面端）：启动时检查新版本 → 提示 → 下载进度 → 自动安装重启
+- **播放体验**：ArtPlayer 内核，自动连播、记忆进度、倍速、快捷键
+- **豆瓣推荐**：热门榜单 / Top250 / 分类筛选
+- **移动端适配**：底部导航、沉浸式界面
 
-## ✨ 主要特性
+## 下载
 
-- 🎬 **海量资源聚合**: 搜索来自多个在线视频源的电影、电视剧、动漫及综艺节目。
-- 🖥️ **原生跨平台体验**: 基于 Tauri 2.0 构建，提供接近原生的性能和流畅体验。支持 Windows, macOS, Linux, 和 Android。
-- 📱 **移动端优先设计**: UI 界面为移动设备深度优化，确保在手机和平板上也能舒适操作。
-- 🔍 **强大的筛选功能**: 增强的豆瓣热门内容和高级类型筛选，帮助您快速发现高分好评的影视作品。
-- 🚀 **开箱即用**: 无需复杂的部署过程，直接下载安装包即可使用，告别配置烦恼。
-- 🔐 **开源与安全**: 项目完全开源，代码透明，无任何跟踪或广告。
+前往 [Releases](https://github.com/xiaowulai-s/LittleSU-TV-App/releases/latest)：
 
----
+| 平台 | 文件 |
+|---|---|
+| Android | `LittleSU-TV-v*-android-universal.apk` |
+| Windows | `LittleSU.TV_*_x64-setup.exe`（NSIS 安装包）或 `*.msi` |
+| macOS | `LittleSU.TV-v*-ARM64.dmg` |
+| Linux | `*.AppImage` / `*.deb` / `*.rpm` |
 
-## 📸 应用截图
+桌面端内置自动更新：安装 v1.2.0 及以上版本后，后续新版本会在启动时提示一键升级。
 
-**桌面端:**
+## 从源码构建
 
-![LibreTV-App 桌面端主页](https://oss.keyrotate.com/public/images/dcef63b5-174c-4b6e-a9bc-15fefa86c9a0.jpg)
-![LibreTV-App 桌面端搜索结果](https://oss.keyrotate.com/public/images/4b4ee048-7ba6-4136-94e4-3a6e2cd0c53d.jpg)
-![LibreTV-App 桌面端视频详情](https://oss.keyrotate.com/public/images/4667f8e0-43ed-406c-9696-247c91bfa5a8.jpg)
-![LibreTV-App 桌面端播放器](https://oss.keyrotate.com/public/images/e88d0dea-48d8-4699-b95b-8d3093146f29.jpg)
+环境要求：Node.js 18+、Rust（桌面端）、Android SDK/NDK（安卓端）。
 
-**移动端:**
+```bash
+npm install
 
-<img src="https://oss.keyrotate.com/public/images/c209dbe4-820e-41c8-923a-4246d4005c33.jpg" alt="LibreTV-App 移动端主页" width="300" />
-<img src="https://oss.keyrotate.com/public/images/ce2605d0-6f2c-4c5b-8b65-cdb7689e2091.jpg" alt="LibreTV-App 移动端筛选" width="300" />
+# 桌面端（Windows 需 MSVC 工具链）
+npx tauri build
 
----
+# 安卓端
+npx tauri android init   # 首次
+npx tauri android build --apk --target aarch64
+```
 
-## 🚀 快速开始
+推送 `v*` 标签会触发 GitHub Actions 自动构建全平台安装包并发布 Release。
 
-### 1. 直接安装 (推荐)
+## 修改内置采集源
 
-您可以直接从项目的 [**Releases 页面**](https://github.com/KeyRotate/LibreTV-App/releases) 下载适用于您操作系统的最新版本安装包。
+编辑 `js/config.js` 中的 `API_SITES`（标准苹果CMS JSON 接口格式），推 `v*` 标签重新发布即可。
 
-安装后即可直接运行，无需额外配置或部署服务器。
+## 目录说明
 
-### 2. 从源码编译
+- `index.html` / `watch.html` / `player.html` — 应用页面（直接运行的前端）
+- `js/` — 前端逻辑（搜索聚合、播放器、豆瓣、设置）
+- `src-tauri/` — Tauri 壳（Rust）与平台配置
+- `public/` — Tauri 打包使用的前端目录（含安卓修正版）
+- `.github/workflows/release.yml` — 全平台发布流水线
 
-如果您是开发者，希望从源代码编译本项目，或者参与开发贡献，请参考我们的 [**构建指南 (BUILDING.md)**](BUILDING.md)。
+## 免责声明
 
----
+本应用不存储、不制作任何视频内容，仅提供第三方公开接口的聚合与播放能力。
+请尊重版权，勿用于商业侵权用途；内容的合法性由对应数据源负责。
 
-## 🛠️ 技术栈
+## 许可证
 
-- **核心框架**: [Tauri 2.0](https://tauri.app/)
-- **前端**: HTML, CSS, JavaScript (Vanilla JS)
-- **UI**: [Tailwind CSS](https://tailwindcss.com/)
-
-
-## ⚠️ 免责声明
-LibreTV-App 仅作为视频搜索工具，不存储、上传或分发任何视频内容。所有视频均来自第三方 API 接口提供的搜索结果。如有侵权内容，请联系相应的内容提供方。
-
-本项目开发者不对使用本项目产生的任何后果负责。使用本项目时，您必须遵守当地的法律法规。
+[Apache-2.0](./LICENSE)（沿用上游授权；上游链条含 AGPL 的 LibreTV，详见 [NOTICE](./NOTICE)）
