@@ -471,6 +471,13 @@ jobs:
       #     tauriScript: 'tauri android'
       #     args: '-v'
 
+      - name: Tune Gradle memory (prevent AAPT2 OOM on hosted runners)
+        run: |
+          GP=src-tauri/gen/android/gradle.properties
+          echo "org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1024m" >> "$GP"
+          echo "org.gradle.workers.max=2" >> "$GP"
+          tail -3 "$GP"
+
       - name: Build Tauri Android application (Direct Command)
         run: npx tauri android build -v # -v for verbose output, should produce an AAB
         env:
