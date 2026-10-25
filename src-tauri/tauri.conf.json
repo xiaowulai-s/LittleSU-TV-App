@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "libretv",
-  "version": "0.1.0",
-  "identifier": "com.libretv.app",
+  "productName": "LittleSU TV",
+  "version": "1.0.0",
+  "identifier": "com.xiaowulai.littlesu",
   "build": {
     "frontendDist": "../public",
     "beforeDevCommand": ""
@@ -10,7 +10,7 @@
   "app": {
     "windows": [
       {
-        "title": "libretv",
+        "title": "LittleSU TV",
         "width": 800,
         "height": 600,
         "resizable": true,
