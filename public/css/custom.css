@@ -16,11 +16,7 @@ body.page-bg, .page-bg {
 
 /* ---------- 品牌渐变文字（logo / 区块标题） ---------- */
 .gradient-text {
-  background: linear-gradient(120deg, #a5b4fc 0%, #c084fc 52%, #f0abfc 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  color: transparent !important;
+  color: #a5b4fc !important;
 }
 
 /* ---------- 旧硬编码底色 → 现代深蓝玻璃 ---------- */
@@ -36,8 +32,6 @@ body.page-bg, .page-bg {
 /* ---------- 底部导航：玻璃拟态 + 品牌激活态 ---------- */
 #bottomNav {
   background: rgba(11, 16, 26, .78) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(1.4) !important;
-  backdrop-filter: blur(18px) saturate(1.4) !important;
   border-top: 1px solid rgba(129, 140, 248, .16) !important;
 }
 #bottomNav .nav-item { transition: color .2s ease, transform .2s ease; }
@@ -85,3 +79,7 @@ body.page-bg, .page-bg {
     radial-gradient(800px 420px at 108% 108%, rgba(192, 132, 252, .14), transparent 60%),
     linear-gradient(180deg, #0b101a 0%, #0d1220 100%) !important;
 }
+
+/* ---------- 文字对比度提升（避免灰字发糊观感） ---------- */
+[class*="text-gray-400"] { color: #b6c2d4 !important; }
+[class*="text-gray-500"] { color: #98a6ba !important; }
