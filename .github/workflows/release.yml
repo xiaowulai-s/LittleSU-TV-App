@@ -728,7 +728,7 @@ jobs:
           echo "Signing the Universal APK with apksigner..."
           APKSIGNER_PATH="$ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | sort -V -r | head -n 1)/apksigner"
           UNSIGNED_APK_PATH="${{ steps.extract_unsigned_apk_file.outputs.unsigned_universal_apk_path }}"
-          SIGNED_APK_PATH="libretv-${{ github.ref_name }}-android-universal.apk" # Final release name
+          SIGNED_APK_PATH="LittleSU-TV-${{ github.ref_name }}-android-universal.apk" # Final release name
           KEYSTORE_FILE="${{ env.SIGNING_KEYSTORE_PATH }}" # From 'Decode Keystore for apksigner' step
 
           if [ -z "$UNSIGNED_APK_PATH" ]; then
@@ -807,7 +807,7 @@ jobs:
           echo "Signing the armeabi-v7a APK with apksigner..."
           APKSIGNER_PATH="$ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | sort -V -r | head -n 1)/apksigner"
           UNSIGNED_APK_PATH="${{ steps.extract_apk_files.outputs.apk_armeabi_v7a_path }}"
-          SIGNED_APK_PATH="libretv-${{ github.ref_name }}-android-armeabi-v7a.apk"
+          SIGNED_APK_PATH="LittleSU-TV-${{ github.ref_name }}-android-armeabi-v7a.apk"
           KEYSTORE_FILE="${{ env.SIGNING_KEYSTORE_PATH }}"
 
           if [ ! -f "$UNSIGNED_APK_PATH" ]; then
@@ -846,7 +846,7 @@ jobs:
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_path: ${{ steps.sign_universal_apk.outputs.signed_apk_path }} # Use path from apksigner step
-          asset_name: libretv-${{ github.ref_name }}-android-universal.apk
+          asset_name: LittleSU-TV-${{ github.ref_name }}-android-universal.apk
           asset_content_type: application/vnd.android.package-archive
 
       - name: Upload armeabi-v7a APK (signed by apksigner)
@@ -857,7 +857,7 @@ jobs:
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_path: ${{ steps.sign_armeabi_v7a_apk.outputs.signed_apk_path }}
-          asset_name: libretv-${{ github.ref_name }}-android-armeabi-v7a.apk
+          asset_name: LittleSU-TV-${{ github.ref_name }}-android-armeabi-v7a.apk
           asset_content_type: application/vnd.android.package-archive
 
       - name: Sign arm64-v8a APK (apksigner)
@@ -867,7 +867,7 @@ jobs:
           echo "Signing the arm64-v8a APK with apksigner..."
           APKSIGNER_PATH="$ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | sort -V -r | head -n 1)/apksigner"
           UNSIGNED_APK_PATH="${{ steps.extract_apk_files.outputs.apk_arm64_v8a_path }}"
-          SIGNED_APK_PATH="libretv-${{ github.ref_name }}-android-arm64-v8a.apk"
+          SIGNED_APK_PATH="LittleSU-TV-${{ github.ref_name }}-android-arm64-v8a.apk"
           KEYSTORE_FILE="${{ env.SIGNING_KEYSTORE_PATH }}"
 
           if [ ! -f "$UNSIGNED_APK_PATH" ]; then
@@ -899,7 +899,7 @@ jobs:
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_path: ${{ steps.sign_arm64_v8a_apk.outputs.signed_apk_path }}
-          asset_name: libretv-${{ github.ref_name }}-android-arm64-v8a.apk
+          asset_name: LittleSU-TV-${{ github.ref_name }}-android-arm64-v8a.apk
           asset_content_type: application/vnd.android.package-archive
 
       - name: Sign x86 APK (apksigner)
@@ -909,7 +909,7 @@ jobs:
           echo "Signing the x86 APK with apksigner..."
           APKSIGNER_PATH="$ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | sort -V -r | head -n 1)/apksigner"
           UNSIGNED_APK_PATH="${{ steps.extract_apk_files.outputs.apk_x86_path }}"
-          SIGNED_APK_PATH="libretv-${{ github.ref_name }}-android-x86.apk"
+          SIGNED_APK_PATH="LittleSU-TV-${{ github.ref_name }}-android-x86.apk"
           KEYSTORE_FILE="${{ env.SIGNING_KEYSTORE_PATH }}"
 
           if [ ! -f "$UNSIGNED_APK_PATH" ]; then
@@ -941,7 +941,7 @@ jobs:
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_path: ${{ steps.sign_x86_apk.outputs.signed_apk_path }}
-          asset_name: libretv-${{ github.ref_name }}-android-x86.apk
+          asset_name: LittleSU-TV-${{ github.ref_name }}-android-x86.apk
           asset_content_type: application/vnd.android.package-archive
 
       - name: Sign x86_64 APK (apksigner)
@@ -951,7 +951,7 @@ jobs:
           echo "Signing the x86_64 APK with apksigner..."
           APKSIGNER_PATH="$ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | sort -V -r | head -n 1)/apksigner"
           UNSIGNED_APK_PATH="${{ steps.extract_apk_files.outputs.apk_x86_64_path }}"
-          SIGNED_APK_PATH="libretv-${{ github.ref_name }}-android-x86_64.apk"
+          SIGNED_APK_PATH="LittleSU-TV-${{ github.ref_name }}-android-x86_64.apk"
           KEYSTORE_FILE="${{ env.SIGNING_KEYSTORE_PATH }}"
 
           if [ ! -f "$UNSIGNED_APK_PATH" ]; then
@@ -983,5 +983,5 @@ jobs:
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_path: ${{ steps.sign_x86_64_apk.outputs.signed_apk_path }}
-          asset_name: libretv-${{ github.ref_name }}-android-x86_64.apk
+          asset_name: LittleSU-TV-${{ github.ref_name }}-android-x86_64.apk
           asset_content_type: application/vnd.android.package-archive
