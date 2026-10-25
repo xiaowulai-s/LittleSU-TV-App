@@ -1,13 +1,14 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "LittleSU TV",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "identifier": "com.xiaowulai.littlesu",
   "build": {
     "frontendDist": "../public",
     "beforeDevCommand": ""
   },
   "app": {
+    "withGlobalTauri": true,
     "windows": [
       {
         "title": "LittleSU TV",
@@ -24,9 +25,15 @@
       "capabilities": ["default"]
     }
   },
-  "plugins": {},
+  "plugins": {
+    "updater": {
+      "endpoints": ["https://github.com/xiaowulai-s/LittleSU-TV-App/releases/latest/download/latest.json"],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEE3RUE4OURCQjYwODlGMDgKUldRSW53aTIyNG5xcC9JMzhnK0JLWTNLUXdscVNmMUhxblluOENvaDc4U090YktoMGtsWDJnaGgK"
+    }
+  },
   "bundle": {
     "active": true,
+    "createUpdaterArtifacts": true,
     "targets": "all",
     "icon": [
       "icons/32x32.png",
