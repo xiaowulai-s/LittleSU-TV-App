@@ -1,4 +1,10 @@
-# LittleSU TV App
+# LittleSU TV App（已归档）
+
+> **本仓库已于 2026-10-26 归档。**
+>
+> 本客户端已合并到单仓库 [xiaowulai-s/LittleSU](https://github.com/xiaowulai-s/LittleSU)，源码位于 `apps/app`；网页版源码位于 `apps/web`。
+>
+> 本仓库仅保留只读的历史提交与旧 Release，不再接受更新。新版本、问题反馈与下载请前往新仓库。
 
 **免费在线视频搜索与观看平台 —— 独立客户端版**：搜索、播放、豆瓣推荐全部内置，**无需任何服务器、无需电脑、无需域名**，安装即用。
 
